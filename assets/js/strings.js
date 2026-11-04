@@ -5,7 +5,7 @@ export const STRINGS = {
   'meta.home.title': { en: "Leo Neufeld · Data & AI · Bern", de: "Leo Neufeld · Data & KI · Bern" },
   'meta.home.description': {
     en: "Industrial engineer and former operations lead who now builds data and AI tools. M.Sc. Data Science at BFH, based in Bern.",
-    de: "Wirtschaftsingenieur und ehemaliger Operations-Leiter, der heute Daten- und KI-Tools baut. M.Sc. Data Science an der BFH, wohnhaft in Bern.",
+    de: "Wirtschaftsingenieur und ehemaliger Operations-Leiter, der heute Daten- und KI-Tools baut. M.Sc. Data Science an der BFH, in Bern.",
   },
   'meta.lebread.title': { en: "LeBread Ops · Case study · Leo Neufeld", de: "LeBread Ops · Fallstudie · Leo Neufeld" },
   'meta.lebread.description': {
@@ -50,7 +50,7 @@ export const STRINGS = {
   // ---- number row ----
   'stats.hours.value': { en: "4 h", de: "4 h" },
   'stats.hours.label': { en: "a month no longer spent checking overtime · LeBread", de: "pro Monat weniger Überstundenkontrolle · LeBread" },
-  'stats.cost.value': { en: "−90%", de: "−90%" },
+  'stats.cost.value': { en: "−90%", de: "−90 %" },
   'stats.cost.label': { en: "AI cost per request vs v1*", de: "KI-Kosten pro Anfrage ggü. v1*" },
   'stats.spark.value': { en: "5.3×", de: "5,3×" },
   'stats.spark.label': { en: "faster: Spark DataFrame on Parquet vs RDD on CSV", de: "schneller: Spark-DataFrame auf Parquet statt RDD auf CSV" },
@@ -110,7 +110,7 @@ export const STRINGS = {
   },
   'journey.vigo.numbers': {
     en: "Raw-material cost 35% → 25% · waste 15% → 7% · recurring customers +70% (100 → 170)",
-    de: "Rohstoffkosten 35% → 25% · Ausschuss 15% → 7% · Stammkundschaft +70% (100 → 170)",
+    de: "Rohstoffkosten 35 % → 25 % · Ausschuss 15 % → 7 % · Stammkundschaft +70 % (100 → 170)",
   },
   'journey.kpmg.when': { en: "05/2024 – 10/2024", de: "05/2024 – 10/2024" },
   'journey.kpmg.place': { en: "Stuttgart, Germany", de: "Stuttgart, Deutschland" },
@@ -128,7 +128,7 @@ export const STRINGS = {
   },
   'journey.bunca.numbers': {
     en: "Shortages −20% · lead times −50% in Germany, −25% across Europe",
-    de: "Fehlbestände −20% · Lieferzeiten −50% in Deutschland, −25% in Europa",
+    de: "Fehlbestände −20 % · Lieferzeiten −50 % in Deutschland, −25 % in Europa",
   },
   'journey.recuro.when': { en: "01/2026 – today", de: "01/2026 – heute" },
   'journey.recuro.place': { en: "Bern, Switzerland", de: "Bern, Schweiz" },
@@ -209,8 +209,8 @@ export const STRINGS = {
   // ---- contact ----
   'contact.title': { en: "Contact", de: "Kontakt" },
   'contact.intro': {
-    en: "I'm looking for data and AI roles in Bern, Zurich, Basel or remote in Switzerland. Email is the fastest way to reach me.",
-    de: "Ich suche Stellen in Data und KI in Bern, Zürich, Basel oder remote in der Schweiz. Per E-Mail erreichen Sie mich am schnellsten.",
+    en: "I'm looking for data and AI roles in Bern, Zurich, Basel or remote in Switzerland. Email reaches me fastest.",
+    de: "Ich suche Stellen in Data und KI in Bern, Zürich, Basel oder remote in der Schweiz. Per E-Mail bin ich am schnellsten erreichbar.",
   },
   'contact.email': { en: "Email", de: "E-Mail" },
   'contact.linkedin': { en: "LinkedIn", de: "LinkedIn" },
@@ -218,7 +218,7 @@ export const STRINGS = {
   'contact.cvEn': { en: "CV in English (PDF)", de: "Lebenslauf auf Englisch (PDF)" },
   'contact.cvDe': { en: "CV in German (PDF)", de: "Lebenslauf auf Deutsch (PDF)" },
   'contact.location': { en: "Bern, Switzerland", de: "Bern, Schweiz" },
-  'contact.status': { en: "EU citizen · B permit", de: "EU-Bürger · Bewilligung B" },
+  'contact.status': { en: "EU citizen · B permit", de: "EU-Bürger · Ausweis B" },
   'contact.languages': {
     en: "English and Spanish (native) · German C1 · Italian B2",
     de: "Englisch und Spanisch (Muttersprache) · Deutsch C1 · Italienisch B2",
@@ -240,7 +240,7 @@ export const STRINGS = {
   'lebread.problem.title': { en: "The problem", de: "Das Problem" },
   'lebread.problem.body': {
     en: "Overtime lived on a paper sheet. Every month the manager went through it by hand and checked the hours. That took about 4 hours.",
-    de: "Die Überstunden standen auf einem Blatt Papier. Jeden Monat ging die Geschäftsleitung es von Hand durch und prüfte die Stunden. Das dauerte rund 4 Stunden.",
+    de: "Die Überstunden standen auf einem Blatt Papier. Jeden Monat ging die Filialleitung es von Hand durch und prüfte die Stunden. Das dauerte rund 4 Stunden.",
   },
   'lebread.does.title': { en: "What it does", de: "Was es macht" },
   'lebread.does.intro': { en: "Staff use it in Telegram. They can:", de: "Die Mitarbeitenden nutzen es in Telegram. Sie können:" },
@@ -255,17 +255,17 @@ export const STRINGS = {
   'lebread.design.title': { en: "The design rule", de: "Die Designregel" },
   'lebread.design.line': { en: "The AI chooses. The code does the work.", de: "Die KI wählt aus. Der Code macht die Arbeit." },
   'lebread.design.body': {
-    en: "The language model reads the chat and picks which tool to call. That's its whole job. Pay and hours are calculated in plain Python and SQL. Any change to the data is a proposal, and a person confirms it before it's saved. The monthly reports run with zero AI calls.",
-    de: "Das Sprachmodell liest den Chat und wählt, welches Tool aufgerufen wird. Mehr macht es nicht. Lohn und Stunden werden in normalem Python und SQL berechnet. Jede Datenänderung ist ein Vorschlag, den eine Person bestätigt, bevor er gespeichert wird. Die Monatsberichte laufen ganz ohne KI-Aufrufe.",
+    en: "The language model reads the chat and only picks which tool to call. Pay and hours are calculated in plain Python and SQL. Any change to the data is a proposal, and a person confirms it before it's saved. The monthly reports run with zero AI calls.",
+    de: "Das Sprachmodell liest den Chat und wählt nur aus, welches Tool aufgerufen wird. Lohn und Stunden werden in normalem Python und SQL berechnet. Jede Datenänderung ist ein Vorschlag, den eine Person bestätigt, bevor er gespeichert wird. Die Monatsberichte laufen ganz ohne KI-Aufrufe.",
   },
   'lebread.numbers.title': { en: "Numbers", de: "Zahlen" },
   'lebread.num.hours.value': { en: "4 h/month", de: "4 h/Monat" },
   'lebread.num.hours.label': { en: "saved on overtime checks (measured)", de: "weniger Überstundenkontrolle (gemessen)" },
-  'lebread.num.cost.value': { en: "−90%", de: "−90%" },
+  'lebread.num.cost.value': { en: "−90%", de: "−90 %" },
   'lebread.num.cost.label': { en: "AI cost per request vs v1*", de: "KI-Kosten pro Anfrage ggü. v1*" },
   'lebread.num.tests.value': { en: "1,700+", de: "1700+" },
   'lebread.num.tests.label': { en: "automated tests", de: "automatisierte Tests" },
-  'lebread.num.coverage.value': { en: "99%", de: "99%" },
+  'lebread.num.coverage.value': { en: "99%", de: "99 %" },
   'lebread.num.coverage.label': { en: "test coverage", de: "Testabdeckung" },
   'lebread.diagram.title': { en: "How a message moves through the system", de: "Wie eine Nachricht durch das System läuft" },
   'lebread.diagram.telegram': { en: "Telegram", de: "Telegram" },
@@ -291,7 +291,7 @@ export const STRINGS = {
   'lebread.chart.note': { en: "Relative cost, v1 = 100.", de: "Relative Kosten, v1 = 100." },
   'lebread.chart.alt': {
     en: "Bar chart: cost per request, v1 at 100 and v2 at about 10, roughly 90% lower. Early numbers.",
-    de: "Balkendiagramm: Kosten pro Anfrage, v1 bei 100 und v2 bei etwa 10, rund 90% tiefer. Erste Messwerte.",
+    de: "Balkendiagramm: Kosten pro Anfrage, v1 bei 100 und v2 bei etwa 10, rund 90 % tiefer. Erste Messwerte.",
   },
   'lebread.code.title': { en: "Code", de: "Code" },
   'lebread.code.body': {
@@ -326,8 +326,8 @@ export const STRINGS = {
   },
   'garage.result.title': { en: "The result", de: "Das Ergebnis" },
   'garage.result.body': {
-    en: "I timed the same work two ways: Spark RDDs on the raw CSV, and Spark DataFrames on Parquet from Garage. Ingest, every analysis and the total, averaged over 10 runs. RDD on CSV took 3.49 s. DataFrame on Parquet took 0.65 s. That's 5.3× faster, even with the data coming over the network.",
-    de: "Ich habe dieselbe Arbeit auf zwei Arten gemessen: Spark-RDDs auf der rohen CSV und Spark-DataFrames auf Parquet aus Garage. Einlesen, jede Analyse und die Gesamtzeit, gemittelt über 10 Läufe. RDD auf CSV brauchte 3,49 s. DataFrame auf Parquet brauchte 0,65 s. Das ist 5,3× schneller, obwohl die Daten über das Netzwerk kommen.",
+    en: "I timed the same work two ways: Spark RDDs on the raw CSV, and Spark DataFrames on Parquet from Garage. Each timing covers ingest and every analysis, averaged over 10 runs. RDD on CSV took 3.49 s. DataFrame on Parquet took 0.65 s. That's 5.3× faster, even with the data coming over the network.",
+    de: "Ich habe dieselbe Arbeit auf zwei Arten gemessen: Spark-RDDs auf der rohen CSV und Spark-DataFrames auf Parquet aus Garage. Jede Messung umfasst das Einlesen und alle Analysen, gemittelt über 10 Läufe. RDD auf CSV brauchte 3,49 s. DataFrame auf Parquet brauchte 0,65 s. Das ist 5,3× schneller, obwohl die Daten über das Netzwerk kommen.",
   },
   'garage.chart.title': { en: "Total time, average of 10 runs", de: "Gesamtzeit, Mittel aus 10 Läufen" },
   'garage.chart.rdd': { en: "RDD on CSV", de: "RDD auf CSV" },
@@ -352,12 +352,12 @@ export const STRINGS = {
   },
   'garage.classify.title': { en: "Classification", de: "Klassifikation" },
   'garage.classify.body': {
-    en: "The last part predicts a customer's country from the products they bought, with a decision tree and a random forest. The tree reached 91% accuracy, but always guessing UK already gets 90.8%. On imbalanced data, check the baseline first.",
-    de: "Im letzten Teil wird das Land einer Kundin oder eines Kunden aus den gekauften Produkten vorhergesagt, mit einem Entscheidungsbaum und einem Random Forest. Der Baum erreichte 91% Genauigkeit, aber immer «UK» zu raten ergibt schon 90,8%. Bei unausgewogenen Daten zuerst die Baseline prüfen.",
+    en: "The last part predicts a customer's country from the products they bought, with a decision tree and a random forest. The tree reached 91% accuracy, against a baseline of 90.8% for always guessing UK.",
+    de: "Im letzten Teil wird das Land einer Kundin oder eines Kunden aus den gekauften Produkten vorhergesagt, mit einem Entscheidungsbaum und einem Random Forest. Der Baum erreichte 91 % Genauigkeit, gegenüber einer Baseline von 90,8 %, wenn man immer «UK» rät.",
   },
   'garage.classify.speed': {
-    en: "Speed: the random forest with 50 trees took 16.9 s, the single tree 11.8 s. Only 1.4× slower.",
-    de: "Tempo: Der Random Forest mit 50 Bäumen brauchte 16,9 s, der einzelne Baum 11,8 s. Nur 1,4× langsamer.",
+    en: "Speed: the random forest with 50 trees took 16.9 s and the single tree 11.8 s, so the forest was only 1.4× slower.",
+    de: "Tempo: Der Random Forest mit 50 Bäumen brauchte 16,9 s, der einzelne Baum 11,8 s, also nur 1,4× länger.",
   },
   'garage.code.title': { en: "Code", de: "Code" },
   'garage.code.body': { en: "The code is public, without keys or config secrets.", de: "Der Code ist öffentlich, ohne Schlüssel und Konfigurationsgeheimnisse." },
