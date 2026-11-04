@@ -1,4 +1,4 @@
-import { pickLang, applyLang, safeStorage } from './i18n.js';
+import { pickLang, applyLang, safeStorage, t } from './i18n.js';
 import { STRINGS } from './strings.js';
 
 const toggle = document.querySelector('.lang-toggle');
@@ -6,11 +6,12 @@ let lang = pickLang(safeStorage.get('lang'), navigator.languages || [navigator.l
 
 const render = () => {
   applyLang(document, STRINGS, lang);
-  // the toggle speaks the *other* language ("Auf Deutsch umschalten" / "Switch to English")
-  if (toggle) {
-    toggle.setAttribute('aria-pressed', String(lang === 'de'));
-    toggle.lang = lang === 'de' ? 'en' : 'de';
-  }
+  // applyLang doesn't cover meta tags; <title> already goes through data-i18n
+  document.querySelectorAll('[data-i18n-content]').forEach((m) => {
+    m.setAttribute('content', t(STRINGS, m.getAttribute('data-i18n-content'), lang));
+  });
+  // the toggle means "German": pressed exactly while DE is active
+  if (toggle) toggle.setAttribute('aria-pressed', String(lang === 'de'));
   document.querySelectorAll('[data-cv]').forEach((a) => {
     a.href = `assets/cv/leo-neufeld-cv-${lang}.pdf`;
     a.hreflang = lang;

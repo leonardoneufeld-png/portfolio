@@ -27,8 +27,8 @@ export const STRINGS = {
   'nav.home': { en: "Home", de: "Startseite" },
   'nav.back': { en: "Back to home", de: "Zurück zur Startseite" },
   'nav.skip': { en: "Skip to content", de: "Zum Inhalt springen" },
-  'nav.langToggle': { en: "Auf Deutsch umschalten", de: "Switch to English" },
-  'nav.langToggleText': { en: "DE", de: "EN" },
+  // toggle = "German" switch: same name in both languages, aria-pressed="true" while DE is active
+  'nav.langToggle': { en: "EN · DE (Deutsch)", de: "EN · DE (Deutsch)" },
 
   // ---- hero ----
   'hero.kicker': { en: "Data & AI · Bern", de: "Data & KI · Bern" },
