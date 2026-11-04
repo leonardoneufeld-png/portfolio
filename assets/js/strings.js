@@ -166,7 +166,7 @@ export const STRINGS = {
   'skills.jupyter.where': { en: "BFH coursework", de: "BFH-Kursarbeit" },
   'skills.docker.name': { en: "Docker", de: "Docker" },
   'skills.docker.where': { en: "BFH coursework · Garage data lake", de: "BFH-Kursarbeit · Data Lake mit Garage" },
-  'skills.llm.name': { en: "LLM agents and tool use (Claude API, MCP)", de: "LLM-Agenten und Tool Use (Claude API, MCP)" },
+  'skills.llm.name': { en: "LLM agents and tool use (Claude API)", de: "LLM-Agenten und Tool Use (Claude API)" },
   'skills.llm.where': { en: "in production · LeBread", de: "im Einsatz · LeBread" },
   'skills.telegram.name': { en: "Telegram Bot API", de: "Telegram Bot API" },
   'skills.telegram.where': { en: "in production · LeBread", de: "im Einsatz · LeBread" },
@@ -235,7 +235,7 @@ export const STRINGS = {
   },
   'lebread.facts.client': { en: "Client: LeBread, Bern", de: "Kunde: LeBread, Bern" },
   'lebread.facts.role': { en: "Role: everything, from requirements with management to rollout", de: "Rolle: alles, von den Anforderungen mit der Geschäftsleitung bis zum Rollout" },
-  'lebread.facts.stack': { en: "Python · SQLite · APScheduler · MCP · Telegram Bot API · Google APIs", de: "Python · SQLite · APScheduler · MCP · Telegram Bot API · Google APIs" },
+  'lebread.facts.stack': { en: "Python · SQLite · APScheduler · Claude API (tool use) · Telegram Bot API · Google APIs", de: "Python · SQLite · APScheduler · Claude API (tool use) · Telegram Bot API · Google APIs" },
   'lebread.facts.status': { en: "Status: in production", de: "Status: im Einsatz" },
   'lebread.problem.title': { en: "The problem", de: "Das Problem" },
   'lebread.problem.body': {
