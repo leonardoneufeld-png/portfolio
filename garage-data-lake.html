@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="meta.garage.title">Garage data lake · Case study · Leo Neufeld</title>
+  <meta name="description" data-i18n-content="meta.garage.description" content="A small data lake in Docker, queried with Spark straight from object storage. DataFrame on Parquet ran 5.3× faster than RDD on CSV.">
+  <meta name="theme-color" content="#F4EEE4">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script type="module" src="assets/js/main.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main" data-i18n="nav.skip">Skip to content</a>
+
+  <header class="site-nav wrap">
+    <a class="site-nav__name" href="index.html" data-i18n="nav.name">Leo Neufeld</a>
+    <nav class="site-nav__links">
+      <a href="index.html#work" data-i18n="nav.work">Work</a>
+      <a href="index.html#journey" data-i18n="nav.journey">Journey</a>
+      <a href="assets/cv/leo-neufeld-cv-en.pdf" data-cv data-i18n="nav.cv">CV</a>
+      <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <button class="lang-toggle" type="button" aria-pressed="false" hidden data-i18n-aria="nav.langToggle" aria-label="EN · DE (Deutsch)"><span class="lang-toggle__en">EN</span> · <span class="lang-toggle__de">DE</span></button>
+  </header>
+
+  <main id="main">
+    <header class="case-hero wrap">
+      <div>
+        <p class="kicker" data-i18n="garage.kicker">Case study · Data engineering · BFH BTI1032</p>
+        <h1 data-i18n="garage.title">Garage data lake</h1>
+        <p class="case-hero__lede" data-i18n="garage.lede">A graded exercise from the Data Engineering course at BFH: a small data lake in Docker, analysed with Spark.</p>
+      </div>
+      <ul class="case-facts">
+        <li data-i18n="garage.facts.context">Context: M.Sc. Data Science, BFH, course BTI1032</li>
+        <li data-i18n="garage.facts.stack">Garage (S3) · Docker · fastparquet · PySpark · Jupyter</li>
+      </ul>
+    </header>
+
+    <div class="wrap">
+      <section class="case-block case-block--wide" aria-labelledby="setup-title">
+        <h2 id="setup-title" data-i18n="garage.setup.title">The setup</h2>
+        <div class="case-split">
+          <div class="case-body reveal">
+            <p data-i18n="garage.setup.body">Garage is an S3-compatible object store. It runs in Docker next to a Spark container with Jupyter, both on one Docker network. I converted the CSV data to Parquet with fastparquet and stored it in Garage. Spark reads the Parquet files straight from Garage. The analysis is SQL-style DataFrame code wrapped in Python functions.</p>
+          </div>
+          <figure class="fig reveal">
+            <svg viewBox="0 0 360 344" role="img" aria-labelledby="gd-diagram-alt">
+              <title id="gd-diagram-alt" data-i18n="garage.diagram.alt">Pipeline diagram: CSV is converted with fastparquet, stored as Parquet in Garage (S3, Docker), read into a Spark DataFrame and used for a classification task.</title>
+              <defs>
+                <marker id="gd-head" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path class="d-head" d="M0 0L8 4L0 8Z"/></marker>
+                <marker id="gd-head-key" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path class="d-key-fill" d="M0 0L8 4L0 8Z"/></marker>
+              </defs>
+              <rect class="d-node" x="50" y="8" width="260" height="44" rx="6"/>
+              <text x="180" y="30" text-anchor="middle" dominant-baseline="central" font-size="15" data-i18n="garage.diagram.csv">CSV</text>
+              <path class="d-arrow" d="M180 52V75" marker-end="url(#gd-head)"/>
+
+              <rect class="d-node d-tool" x="50" y="78" width="260" height="44" rx="22"/>
+              <text x="180" y="100" text-anchor="middle" dominant-baseline="central" font-size="15" data-i18n="garage.diagram.fastparquet">fastparquet</text>
+              <path class="d-arrow" d="M180 122V145" marker-end="url(#gd-head)"/>
+
+              <rect class="d-node d-key" x="50" y="148" width="260" height="48" rx="6"/>
+              <text x="180" y="172" text-anchor="middle" dominant-baseline="central" font-size="15" data-i18n="garage.diagram.garage">Parquet in Garage (S3, Docker)</text>
+              <path class="d-arrow d-key" d="M180 196V219" marker-end="url(#gd-head-key)"/>
+
+              <rect class="d-node d-key" x="50" y="222" width="260" height="44" rx="6"/>
+              <text x="180" y="244" text-anchor="middle" dominant-baseline="central" font-size="15" data-i18n="garage.diagram.spark">Spark DataFrame</text>
+              <path class="d-arrow" d="M180 266V289" marker-end="url(#gd-head)"/>
+
+              <rect class="d-node" x="50" y="292" width="260" height="44" rx="6"/>
+              <text x="180" y="314" text-anchor="middle" dominant-baseline="central" font-size="15" data-i18n="garage.diagram.classify">Classification</text>
+            </svg>
+            <figcaption>
+              <p class="fig__title" data-i18n="garage.diagram.title">The pipeline</p>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-block case-block--wide" aria-labelledby="result-title">
+        <h2 id="result-title" data-i18n="garage.result.title">The result</h2>
+        <div class="case-split">
+          <div class="case-body reveal">
+            <p class="case-big" data-i18n="work.garage.number">5.3× faster</p>
+            <p data-i18n="garage.result.body">I timed the same work two ways: Spark RDDs on the raw CSV, and Spark DataFrames on Parquet from Garage. Each timing covers ingest and every analysis, averaged over 10 runs. RDD on CSV took 3.49 s. DataFrame on Parquet took 0.65 s. That's 5.3× faster, even with the data coming over the network.</p>
+          </div>
+          <figure class="fig fig--chart reveal">
+            <p class="fig__title" data-i18n="garage.chart.title">Total time, average of 10 runs</p>
+            <svg viewBox="0 0 360 108" role="img" aria-labelledby="gd-chart-alt">
+              <title id="gd-chart-alt" data-i18n="garage.chart.alt">Bar chart: RDD on CSV 3.49 seconds, DataFrame on Parquet 0.65 seconds, 5.3× faster.</title>
+              <text x="0" y="14" font-size="14" data-i18n="garage.chart.rdd">RDD on CSV</text>
+              <path class="bar-muted" d="M0 24H296A4 4 0 0 1 300 28V44A4 4 0 0 1 296 48H0Z"/>
+              <text class="bar-value" x="308" y="36" dominant-baseline="central" font-size="14" data-i18n="garage.chart.rddValue">3.49 s</text>
+              <text x="0" y="72" font-size="14" data-i18n="garage.chart.df">DataFrame on Parquet</text>
+              <path class="bar-key" d="M0 82H52A4 4 0 0 1 56 86V102A4 4 0 0 1 52 106H0Z"/>
+              <text class="bar-value" x="64" y="94" dominant-baseline="central" font-size="14" data-i18n="garage.chart.dfValue">0.65 s</text>
+            </svg>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-block reveal" aria-labelledby="why-title">
+        <h2 id="why-title" data-i18n="garage.why.title">Why it's faster</h2>
+        <div class="case-body">
+          <ul class="case-list">
+            <li data-i18n="garage.why.lambdas">No Python lambdas, so no row-by-row traffic between the JVM and Python.</li>
+            <li data-i18n="garage.why.catalyst">Spark's Catalyst optimiser plans the whole query.</li>
+            <li data-i18n="garage.why.parquet">Parquet is columnar and typed, so there's no string parsing.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="case-block reveal" aria-labelledby="classify-title">
+        <h2 id="classify-title" data-i18n="garage.classify.title">Classification</h2>
+        <div class="case-body">
+          <p data-i18n="garage.classify.body">The last part predicts a customer's country from the products they bought, with a decision tree and a random forest. The tree reached 91% accuracy, against a baseline of 90.8% for always guessing UK.</p>
+          <p data-i18n="garage.classify.speed">Speed: the random forest with 50 trees took 16.9 s and the single tree 11.8 s, so the forest was only 1.4× slower.</p>
+        </div>
+      </section>
+
+      <!-- shortcut: whole block hidden while the repo is private ("The code is public" would be false); Task 8 un-hides this section and #repo-link and sets the href -->
+      <section id="code" class="case-block" aria-labelledby="code-title" hidden>
+        <h2 id="code-title" data-i18n="garage.code.title">Code</h2>
+        <div class="case-body">
+          <p data-i18n="garage.code.body">The code is public, without keys or config secrets.</p>
+          <p><a id="repo-link" class="btn btn--quiet" href="#" hidden data-i18n="garage.repoLink">View the code on GitHub</a></p>
+        </div>
+      </section>
+
+      <p class="case-next"><a href="lebread-ops.html"><span aria-hidden="true">←</span> <span data-i18n="garage.prev">Previous case study: LeBread Ops</span></a></p>
+    </div>
+  </main>
+
+  <footer class="site-footer wrap">
+    <p data-i18n="contact.footer">© 2026 Leo Neufeld · No trackers, no cookies.</p>
+  </footer>
+</body>
+</html>

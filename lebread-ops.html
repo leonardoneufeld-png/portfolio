@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="meta.lebread.title">LeBread Ops · Case study · Leo Neufeld</title>
+  <meta name="description" data-i18n-content="meta.lebread.description" content="A Telegram assistant that replaced a paper overtime sheet at a bakery café in Bern. The AI picks the tool, plain Python does the maths.">
+  <meta name="theme-color" content="#F4EEE4">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script type="module" src="assets/js/main.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main" data-i18n="nav.skip">Skip to content</a>
+
+  <header class="site-nav wrap">
+    <a class="site-nav__name" href="index.html" data-i18n="nav.name">Leo Neufeld</a>
+    <nav class="site-nav__links">
+      <a href="index.html#work" data-i18n="nav.work">Work</a>
+      <a href="index.html#journey" data-i18n="nav.journey">Journey</a>
+      <a href="assets/cv/leo-neufeld-cv-en.pdf" data-cv data-i18n="nav.cv">CV</a>
+      <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <button class="lang-toggle" type="button" aria-pressed="false" hidden data-i18n-aria="nav.langToggle" aria-label="EN · DE (Deutsch)"><span class="lang-toggle__en">EN</span> · <span class="lang-toggle__de">DE</span></button>
+  </header>
+
+  <main id="main">
+    <header class="case-hero wrap">
+      <div>
+        <p class="kicker" data-i18n="lebread.kicker">Case study · AI engineering</p>
+        <h1 data-i18n="lebread.title">LeBread Ops</h1>
+        <p class="case-hero__lede" data-i18n="lebread.lede">A Telegram assistant for staff admin at LeBread, a bakery café in Bern.</p>
+      </div>
+      <ul class="case-facts">
+        <li data-i18n="lebread.facts.client">Client: LeBread, Bern</li>
+        <li data-i18n="lebread.facts.role">Role: everything, from requirements with management to rollout</li>
+        <li data-i18n="lebread.facts.status">Status: in production</li>
+        <li data-i18n="lebread.facts.stack">Python · SQLite · APScheduler · MCP · Telegram Bot API · Google APIs</li>
+      </ul>
+    </header>
+
+    <div class="wrap">
+      <section class="case-block reveal" aria-labelledby="problem-title">
+        <h2 id="problem-title" data-i18n="lebread.problem.title">The problem</h2>
+        <div class="case-body">
+          <p data-i18n="lebread.problem.body">Overtime lived on a paper sheet. Every month the manager went through it by hand and checked the hours. That took about 4 hours.</p>
+        </div>
+      </section>
+
+      <section class="case-block reveal" aria-labelledby="does-title">
+        <h2 id="does-title" data-i18n="lebread.does.title">What it does</h2>
+        <div class="case-body">
+          <p data-i18n="lebread.does.intro">Staff use it in Telegram. They can:</p>
+          <ul class="case-list">
+            <li data-i18n="lebread.does.hours">log their working hours</li>
+            <li data-i18n="lebread.does.swap">swap shifts</li>
+            <li data-i18n="lebread.does.sick">report sick</li>
+            <li data-i18n="lebread.does.off">request days off</li>
+          </ul>
+          <p data-i18n="lebread.does.approve">Admins approve requests in the same chat.</p>
+          <p data-i18n="lebread.does.pdf">Monthly statements are saved to Google Drive as PDFs.</p>
+          <p data-i18n="lebread.does.sync">Shifts and hours sync to Google Calendar and Sheets.</p>
+          <p data-i18n="lebread.does.remind">Reminders go out on schedule, and the database is backed up every night.</p>
+        </div>
+      </section>
+
+      <section class="case-block case-block--wide" aria-labelledby="design-title">
+        <h2 id="design-title" data-i18n="lebread.design.title">The design rule</h2>
+        <div class="case-split">
+          <div class="case-body reveal">
+            <p class="case-pull" data-i18n="lebread.design.line">The AI chooses. The code does the work.</p>
+            <p data-i18n="lebread.design.body">The language model reads the chat and only picks which tool to call. Pay and hours are calculated in plain Python and SQL. Any change to the data is a proposal, and a person confirms it before it's saved. The monthly reports run with zero AI calls.</p>
+          </div>
+          <figure class="fig reveal">
+            <svg viewBox="0 0 360 492" role="img" aria-labelledby="lb-diagram-alt">
+              <title id="lb-diagram-alt" data-i18n="lebread.diagram.alt">Diagram: a Telegram message goes to the LLM, which picks a tool. Python functions do the work and write to SQLite, Google Calendar, Sheets, Drive and PDF. Changes to data wait until a person confirms them.</title>
+              <defs>
+                <marker id="lb-head" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path class="d-head" d="M0 0L8 4L0 8Z"/></marker>
+                <marker id="lb-head-key" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path class="d-key-fill" d="M0 0L8 4L0 8Z"/></marker>
+              </defs>
+              <rect class="d-node" x="60" y="8" width="240" height="44" rx="22"/>
+              <text x="180" y="30" text-anchor="middle" dominant-baseline="central" font-size="15" data-i18n="lebread.diagram.telegram">Telegram</text>
+              <path class="d-arrow" d="M180 52V75" marker-end="url(#lb-head)"/>
+
+              <rect class="d-node d-tool" x="60" y="78" width="240" height="44" rx="6"/>
+              <text x="180" y="100" text-anchor="middle" dominant-baseline="central" font-size="15" data-i18n="lebread.diagram.llm">LLM picks a tool</text>
+              <path class="d-arrow" d="M180 122V145" marker-end="url(#lb-head)"/>
+
+              <rect class="d-node" x="60" y="148" width="240" height="44" rx="6"/>
+              <text x="180" y="170" text-anchor="middle" dominant-baseline="central" font-size="15" data-i18n="lebread.diagram.python">Python functions</text>
+              <path class="d-arrow" d="M180 192V215" marker-end="url(#lb-head)"/>
+
+              <rect class="d-key-fill" x="60" y="218" width="240" height="44" rx="22"/>
+              <text class="d-on-key" x="180" y="240" text-anchor="middle" dominant-baseline="central" font-size="15" data-i18n="lebread.diagram.confirm">Person confirms</text>
+              <path class="d-arrow d-key" d="M180 262V285" marker-end="url(#lb-head-key)"/>
+
+              <path class="d-node" d="M60 298a120 10 0 0 0 240 0a120 10 0 0 0 -240 0v40a120 10 0 0 0 240 0v-40"/>
+              <text x="180" y="326" text-anchor="middle" dominant-baseline="central" font-size="15" data-i18n="lebread.diagram.sqlite">SQLite</text>
+              <path class="d-arrow" d="M180 348V375" marker-end="url(#lb-head)"/>
+
+              <rect class="d-group" x="44" y="378" width="272" height="108" rx="8"/>
+              <rect class="d-node" x="56" y="390" width="120" height="40" rx="6"/>
+              <text x="116" y="410" text-anchor="middle" dominant-baseline="central" font-size="14" data-i18n="lebread.diagram.calendar">Google Calendar</text>
+              <rect class="d-node" x="184" y="390" width="120" height="40" rx="6"/>
+              <text x="244" y="410" text-anchor="middle" dominant-baseline="central" font-size="14" data-i18n="lebread.diagram.sheets">Sheets</text>
+              <rect class="d-node" x="56" y="436" width="120" height="40" rx="6"/>
+              <text x="116" y="456" text-anchor="middle" dominant-baseline="central" font-size="14" data-i18n="lebread.diagram.drive">Drive</text>
+              <rect class="d-node" x="184" y="436" width="120" height="40" rx="6"/>
+              <text x="244" y="456" text-anchor="middle" dominant-baseline="central" font-size="14" data-i18n="lebread.diagram.pdf">PDF</text>
+            </svg>
+            <figcaption>
+              <p class="fig__title" data-i18n="lebread.diagram.title">How a message moves through the system</p>
+              <p data-i18n="lebread.diagram.caption">The LLM only picks the tool. Python does the maths, and a person confirms every change to the data.</p>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-block case-block--wide" aria-labelledby="numbers-title">
+        <h2 id="numbers-title" data-i18n="lebread.numbers.title">Numbers</h2>
+        <div class="case-body">
+          <dl class="stat-row reveal">
+            <div class="stat"><dt class="stat__label" data-i18n="lebread.num.hours.label">saved on overtime checks (measured)</dt><dd class="stat__value" data-i18n="lebread.num.hours.value">4 h/month</dd></div>
+            <div class="stat"><dt class="stat__label" data-i18n="lebread.num.cost.label">AI cost per request vs v1*</dt><dd class="stat__value" data-i18n="lebread.num.cost.value">−90%</dd></div>
+            <div class="stat"><dt class="stat__label" data-i18n="lebread.num.tests.label">automated tests</dt><dd class="stat__value" data-i18n="lebread.num.tests.value">1,700+</dd></div>
+            <div class="stat"><dt class="stat__label" data-i18n="lebread.num.coverage.label">test coverage</dt><dd class="stat__value" data-i18n="lebread.num.coverage.value">99%</dd></div>
+          </dl>
+          <figure class="fig fig--chart reveal">
+            <p class="fig__title" data-i18n="lebread.chart.title">AI cost per request</p>
+            <svg viewBox="0 0 360 108" role="img" aria-labelledby="lb-chart-alt">
+              <title id="lb-chart-alt" data-i18n="lebread.chart.alt">Bar chart: cost per request, v1 at 100 and v2 at about 10, roughly 90% lower. Early numbers.</title>
+              <text x="0" y="14" font-size="14" data-i18n="lebread.chart.v1">v1</text>
+              <path class="bar-muted" d="M0 24H276A4 4 0 0 1 280 28V44A4 4 0 0 1 276 48H0Z"/>
+              <text class="bar-value" x="288" y="36" dominant-baseline="central" font-size="14">100</text>
+              <text x="0" y="72" font-size="14" data-i18n="lebread.chart.v2">v2</text>
+              <path class="bar-key" d="M0 82H24A4 4 0 0 1 28 86V102A4 4 0 0 1 24 106H0Z"/>
+              <text class="bar-value" x="36" y="94" dominant-baseline="central" font-size="14">10</text>
+            </svg>
+            <figcaption>
+              <p data-i18n="lebread.chart.note">Relative cost, v1 = 100.</p>
+              <p data-i18n="footnote.cost">* Cost per request: early numbers, being measured.</p>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-block reveal" aria-labelledby="code-title">
+        <h2 id="code-title" data-i18n="lebread.code.title">Code</h2>
+        <div class="case-body">
+          <p data-i18n="lebread.code.body">The repository is private because it holds real staff data. I'm happy to show parts of it in an interview.</p>
+        </div>
+      </section>
+
+      <p class="case-next"><a href="garage-data-lake.html"><span data-i18n="lebread.next">Next case study: Garage data lake</span> <span aria-hidden="true">→</span></a></p>
+    </div>
+  </main>
+
+  <footer class="site-footer wrap">
+    <p data-i18n="contact.footer">© 2026 Leo Neufeld · No trackers, no cookies.</p>
+  </footer>
+</body>
+</html>
