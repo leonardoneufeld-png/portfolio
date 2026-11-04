@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="meta.home.title">Leo Neufeld · Data &amp; AI · Bern</title>
+  <meta name="description" content="Industrial engineer and former operations lead who now builds data and AI tools. M.Sc. Data Science at BFH, based in Bern.">
+  <meta name="theme-color" content="#F4EEE4">
+  <link rel="icon" href="data:,">
+  <link rel="preload" as="image" href="assets/img/hero-takeaway.webp">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script type="module" src="assets/js/main.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main" data-i18n="nav.skip">Skip to content</a>
+
+  <header class="site-nav wrap">
+    <a class="site-nav__name" href="index.html" data-i18n="nav.name">Leo Neufeld</a>
+    <nav class="site-nav__links">
+      <a href="#work" data-i18n="nav.work">Work</a>
+      <a href="#journey" data-i18n="nav.journey">Journey</a>
+      <a href="assets/cv/leo-neufeld-cv-en.pdf" data-cv data-i18n="nav.cv">CV</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+      <button class="lang-toggle" type="button" lang="de" aria-pressed="false" hidden data-i18n-aria="nav.langToggle" aria-label="Auf Deutsch umschalten"><span data-i18n="nav.langToggleText">DE</span></button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section id="hero" class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero__text">
+        <p class="kicker" data-i18n="hero.kicker">Data &amp; AI · Bern</p>
+        <h1 id="hero-title" class="hero__title" data-i18n="hero.headline">I've run a bakery, a coffee operation and a warehouse. Now I build the data and AI tools behind them.</h1>
+        <p class="hero__sub" data-i18n="hero.sub">Industrial engineer, then operations lead, now building AI tools. Currently doing an M.Sc. in Data Science at BFH.</p>
+        <p class="hero__cta">
+          <a class="btn btn--primary" href="#work" data-i18n="hero.ctaWork">See the work</a>
+          <a class="btn btn--quiet" href="assets/cv/leo-neufeld-cv-en.pdf" data-cv data-i18n="hero.ctaCv">Download CV</a>
+        </p>
+      </div>
+      <figure class="hero__photo">
+        <img src="assets/img/hero-takeaway.webp" width="1200" height="1600" fetchpriority="high"
+             data-i18n-alt="hero.photoAlt" alt="Leo in a blue cap at the take-away window of a café">
+      </figure>
+    </section>
+
+    <section id="stats" class="wrap stats">
+      <dl class="stat-row">
+        <div class="stat reveal" style="--i:0"><dt class="stat__label" data-i18n="stats.hours.label">a month no longer spent checking overtime · LeBread</dt><dd class="stat__value" data-i18n="stats.hours.value">4 h</dd></div>
+        <div class="stat reveal" style="--i:1"><dt class="stat__label" data-i18n="stats.cost.label">AI cost per request vs v1*</dt><dd class="stat__value" data-i18n="stats.cost.value">−90%</dd></div>
+        <div class="stat reveal" style="--i:2"><dt class="stat__label" data-i18n="stats.spark.label">faster: Spark DataFrame on Parquet vs RDD on CSV</dt><dd class="stat__value" data-i18n="stats.spark.value">5.3×</dd></div>
+        <div class="stat reveal" style="--i:3"><dt class="stat__label" data-i18n="stats.countries.label">countries worked in: 🇲🇽 🇺🇸 🇩🇪 🇨🇭</dt><dd class="stat__value" data-i18n="stats.countries.value">4</dd></div>
+      </dl>
+      <p class="footnote" data-i18n="footnote.cost">* Cost per request: early numbers, being measured.</p>
+    </section>
+
+    <section id="work" class="section wrap" aria-labelledby="work-title">
+      <header class="section-head reveal">
+        <h2 id="work-title" data-i18n="work.title">Work</h2>
+        <p class="section-head__intro" data-i18n="work.intro">Two projects. One is in daily use at a bakery café, the other is from my master's.</p>
+      </header>
+      <div class="work-grid">
+        <article class="card reveal" style="--i:0">
+          <p class="tag" data-i18n="work.lebread.tag">AI engineering · in production</p>
+          <h3 class="card__title" data-i18n="work.lebread.title">LeBread Ops</h3>
+          <p class="card__hook" data-i18n="work.lebread.hook">A Telegram assistant that replaced a paper overtime sheet at a bakery café in Bern.</p>
+          <p class="card__number" data-i18n="work.lebread.number">4 h/month saved</p>
+          <a class="card__link" href="lebread-ops.html"><span data-i18n="work.lebread.link">Read the case study</span> <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="card reveal" style="--i:1">
+          <p class="tag" data-i18n="work.garage.tag">Data engineering · BFH coursework</p>
+          <h3 class="card__title" data-i18n="work.garage.title">Garage data lake</h3>
+          <p class="card__hook" data-i18n="work.garage.hook">A small data lake in Docker, queried with Spark straight from object storage.</p>
+          <p class="card__number" data-i18n="work.garage.number">5.3× faster</p>
+          <a class="card__link" href="garage-data-lake.html"><span data-i18n="work.garage.link">Read the case study</span> <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+    </section>
+
+    <section id="journey" class="section wrap" aria-labelledby="journey-title">
+      <header class="section-head reveal">
+        <h2 id="journey-title" data-i18n="journey.title">Journey</h2>
+        <p class="section-head__intro" data-i18n="journey.intro">Food and coffee run through all of it. A bakery with my dad in Guadalajara, coffee in Chicago, logistics in Germany. Now AI for a bakery café in Bern.</p>
+      </header>
+      <div class="journey">
+        <ol class="timeline">
+          <li class="timeline__step reveal">
+            <p class="timeline__meta"><span data-i18n="journey.itesm.when">08/2019 – 06/2023</span><span data-i18n="journey.itesm.place">Guadalajara, Mexico</span></p>
+            <div><h3 data-i18n="journey.itesm.title">B.Sc. Industrial Engineering · Tecnológico de Monterrey (ITESM)</h3><p data-i18n="journey.itesm.what">GPA 3.7/4.0. University projects on lean processes, data analytics for decisions and production-line improvement with Uber, José Cuervo, FLEX and ODEM. These were learning projects, part of the degree.</p></div>
+          </li>
+          <li class="timeline__step reveal">
+            <p class="timeline__meta"><span data-i18n="journey.kolter.when">Co-founded 2020 · still open today</span><span data-i18n="journey.kolter.place">Guadalajara, Mexico</span></p>
+            <div><h3 data-i18n="journey.kolter.title">Kolter Bakery · co-founder</h3><p data-i18n="journey.kolter.what">Started it with my dad. A bakery inspired by the German Konditorei, with less sugar. Fitness is part of the concept.</p></div>
+          </li>
+          <li class="timeline__step reveal">
+            <p class="timeline__meta"><span data-i18n="journey.vigo.when">04/2023 – 12/2023</span><span data-i18n="journey.vigo.place">Chicago, USA</span></p>
+            <div><h3 data-i18n="journey.vigo.title">VIGO Coffee · Operations Manager (Acting COO)</h3><p data-i18n="journey.vigo.what">My first job after university, 9 months long. I set up a lean supply chain and a loyalty and promotion programme. VIGO is still running; I moved on.</p><p class="timeline__numbers" data-i18n="journey.vigo.numbers">Raw-material cost 35% → 25% · waste 15% → 7% · recurring customers +70% (100 → 170)</p></div>
+          </li>
+          <li class="timeline__step reveal">
+            <p class="timeline__meta"><span data-i18n="journey.kpmg.when">05/2024 – 10/2024</span><span data-i18n="journey.kpmg.place">Stuttgart, Germany</span></p>
+            <div><h3 data-i18n="journey.kpmg.title">KPMG Consulting · Logistics &amp; ERP Systems Intern Consultant</h3><p data-i18n="journey.kpmg.what">Wrote SQL across several databases for supply-chain KPI dashboards. Supported an SAP S/4HANA migration.</p></div>
+          </li>
+          <li class="timeline__step reveal">
+            <p class="timeline__meta"><span data-i18n="journey.bunca.when">11/2024 – 10/2025</span><span data-i18n="journey.bunca.place">Frankfurt, Germany</span></p>
+            <div><h3 data-i18n="journey.bunca.title">BUNCA Coffee · Logistics Lead (Head of Logistics)</h3><p data-i18n="journey.bunca.what">Built a reorder system in Excel/VBA with dynamic reorder points, and Power BI dashboards for the warehouse. Planned shipments across Europe and led the warehouse team.</p><p class="timeline__numbers" data-i18n="journey.bunca.numbers">Shortages −20% · lead times −50% in Germany, −25% across Europe</p></div>
+          </li>
+          <li class="timeline__step reveal">
+            <p class="timeline__meta"><span data-i18n="journey.recuro.when">01/2026 – today</span><span data-i18n="journey.recuro.place">Bern, Switzerland</span></p>
+            <div><h3 data-i18n="journey.recuro.title">Recuro · Founder &amp; AI Automation Developer</h3><p data-i18n="journey.recuro.what">AI automation for small gastronomy businesses. First client: LeBread, a bakery café in Bern. Kolter to LeBread: back in a bakery, this time writing the software.</p><p class="timeline__numbers" data-i18n="journey.recuro.numbers">4 h/month saved at LeBread</p></div>
+          </li>
+          <li class="timeline__step reveal">
+            <p class="timeline__meta"><span data-i18n="journey.bfh.when">09/2026 – today</span><span data-i18n="journey.bfh.place">Bern, Switzerland</span></p>
+            <div><h3 data-i18n="journey.bfh.title">BFH · M.Sc. Data Science (in progress)</h3><p data-i18n="journey.bfh.what">Machine learning and neural networks (TensorFlow/Keras, CNNs), data engineering (Apache Spark, Docker), databases (PostgreSQL).</p><p class="timeline__numbers" data-i18n="journey.bfh.numbers">Spark on Parquet: 5.3× faster</p></div>
+          </li>
+        </ol>
+        <figure class="journey__photo reveal">
+          <img src="assets/img/journey-zurich.webp" width="900" height="1200" loading="lazy" decoding="async"
+               data-i18n-alt="journey.zurichAlt" alt="Leo on a street in Zurich with a Swiss flag">
+        </figure>
+      </div>
+    </section>
+
+    <section id="skills" class="section wrap" aria-labelledby="skills-title">
+      <header class="section-head reveal">
+        <h2 id="skills-title" data-i18n="skills.title">Skills</h2>
+        <p class="section-head__intro" data-i18n="skills.intro">Each one with where I've used it.</p>
+      </header>
+      <div class="skills">
+        <div class="skills__group reveal" style="--i:0">
+          <h3 data-i18n="skills.data.title">Data &amp; ML</h3>
+          <ul>
+            <li><span data-i18n="skills.python.name">Python</span><span class="tag" data-i18n="skills.python.where">in production · LeBread · BFH coursework</span></li>
+            <li><span data-i18n="skills.sql.name">SQL / PostgreSQL / SQLite</span><span class="tag" data-i18n="skills.sql.where">LeBread (SQLite) · KPMG · BFH (PostgreSQL)</span></li>
+            <li><span data-i18n="skills.spark.name">Apache Spark (DataFrame, Spark SQL)</span><span class="tag" data-i18n="skills.spark.where">BFH coursework · Garage data lake</span></li>
+            <li><span data-i18n="skills.tensorflow.name">TensorFlow / Keras</span><span class="tag" data-i18n="skills.tensorflow.where">BFH coursework</span></li>
+            <li><span data-i18n="skills.jupyter.name">Jupyter</span><span class="tag" data-i18n="skills.jupyter.where">BFH coursework</span></li>
+            <li><span data-i18n="skills.docker.name">Docker</span><span class="tag" data-i18n="skills.docker.where">BFH coursework · Garage data lake</span></li>
+          </ul>
+        </div>
+        <div class="skills__group reveal" style="--i:1">
+          <h3 data-i18n="skills.ai.title">AI &amp; automation</h3>
+          <ul>
+            <li><span data-i18n="skills.llm.name">LLM agents and tool use (Claude API, MCP)</span><span class="tag" data-i18n="skills.llm.where">in production · LeBread</span></li>
+            <li><span data-i18n="skills.telegram.name">Telegram Bot API</span><span class="tag" data-i18n="skills.telegram.where">in production · LeBread</span></li>
+            <li><span data-i18n="skills.google.name">Google APIs (OAuth)</span><span class="tag" data-i18n="skills.google.where">in production · LeBread</span></li>
+            <li><span data-i18n="skills.pytest.name">pytest / TDD</span><span class="tag" data-i18n="skills.pytest.where">LeBread · 1,700+ tests</span></li>
+          </ul>
+        </div>
+        <div class="skills__group reveal" style="--i:2">
+          <h3 data-i18n="skills.biz.title">Analytics &amp; business</h3>
+          <ul>
+            <li><span data-i18n="skills.powerbi.name">Power BI</span><span class="tag" data-i18n="skills.powerbi.where">BUNCA</span></li>
+            <li><span data-i18n="skills.excel.name">Excel / VBA</span><span class="tag" data-i18n="skills.excel.where">BUNCA</span></li>
+            <li><span data-i18n="skills.sap.name">SAP S/4HANA</span><span class="tag" data-i18n="skills.sap.where">KPMG</span></li>
+            <li><span data-i18n="skills.lean.name">Lean</span><span class="tag" data-i18n="skills.lean.where">VIGO · BUNCA · ITESM</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="offclock" class="section wrap" aria-labelledby="offclock-title">
+      <div class="offclock">
+        <figure class="offclock__photo reveal">
+          <img src="assets/img/offclock-cafe.webp" width="900" height="1200" loading="lazy" decoding="async"
+               data-i18n-alt="offclock.photoAlt" alt="Leo in a cardigan at a café table">
+        </figure>
+        <div class="offclock__text">
+          <h2 id="offclock-title" class="reveal" data-i18n="offclock.title">Off the clock</h2>
+          <ul class="offclock__list reveal">
+            <li data-i18n="offclock.coffee">Coffee. Two coffee companies on my CV, and it's still the best part of the morning.</li>
+            <li data-i18n="offclock.cooking">Gastronomy and cooking. The plates below are mine.</li>
+            <li data-i18n="offclock.bowling">Bowling, whenever there's a free lane.</li>
+            <li data-i18n="offclock.fitness">Fitness. Same reason Kolter bakes with less sugar.</li>
+          </ul>
+          <figure class="dishes reveal">
+            <ul>
+              <li><img src="assets/img/dish-beet.webp" width="600" height="600" loading="lazy" decoding="async" data-i18n-alt="offclock.dish.beetAlt" alt="Beet and citrus salad, cooked by Leo"></li>
+              <li><img src="assets/img/dish-zucchini.webp" width="600" height="600" loading="lazy" decoding="async" data-i18n-alt="offclock.dish.zucchiniAlt" alt="Zucchini roses on sourdough, cooked by Leo"></li>
+              <li><img src="assets/img/dish-duck.webp" width="600" height="600" loading="lazy" decoding="async" data-i18n-alt="offclock.dish.duckAlt" alt="Duck on risotto, cooked by Leo"></li>
+              <li><img src="assets/img/dish-pear.webp" width="600" height="600" loading="lazy" decoding="async" data-i18n-alt="offclock.dish.pearAlt" alt="Caramelised pear in green soup, cooked by Leo"></li>
+            </ul>
+            <figcaption data-i18n="offclock.dishesCaption">Cooked and plated by me.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section wrap contact" aria-labelledby="contact-title">
+      <header class="section-head reveal">
+        <h2 id="contact-title" data-i18n="contact.title">Contact</h2>
+        <p class="section-head__intro" data-i18n="contact.intro">I'm looking for data and AI roles in Bern, Zurich, Basel or remote in Switzerland. Email reaches me fastest.</p>
+      </header>
+      <div class="contact__body reveal">
+        <ul class="contact__links">
+          <li><span class="contact__label" data-i18n="contact.email">Email</span><a class="contact__big" href="mailto:leonardoneufeld@gmail.com">leonardoneufeld@gmail.com</a></li>
+          <li><span class="contact__label" data-i18n="contact.linkedin">LinkedIn</span><a class="contact__big" href="https://www.linkedin.com/in/leonardo-neufeld" rel="me">linkedin.com/in/leonardo-neufeld</a></li>
+        </ul>
+        <div class="contact__card">
+          <img class="avatar" src="assets/img/avatar.webp" width="240" height="240" loading="lazy" decoding="async"
+               data-i18n-alt="contact.avatarAlt" alt="Portrait of Leo Neufeld">
+          <ul class="contact__meta">
+            <li data-i18n="contact.location">Bern, Switzerland</li>
+            <li data-i18n="contact.status">EU citizen · B permit</li>
+            <li data-i18n="contact.languages">English and Spanish (native) · German C1 · Italian B2</li>
+          </ul>
+          <p class="contact__cv">
+            <a class="btn btn--primary" href="assets/cv/leo-neufeld-cv-en.pdf" hreflang="en" data-i18n="contact.cvEn">CV in English (PDF)</a>
+            <a class="btn btn--quiet" href="assets/cv/leo-neufeld-cv-de.pdf" hreflang="de" data-i18n="contact.cvDe">CV in German (PDF)</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer wrap">
+    <p data-i18n="contact.footer">© 2026 Leo Neufeld · No trackers, no cookies.</p>
+  </footer>
+</body>
+</html>

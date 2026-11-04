@@ -1,0 +1,43 @@
+import { pickLang, applyLang, safeStorage } from './i18n.js';
+import { STRINGS } from './strings.js';
+
+const toggle = document.querySelector('.lang-toggle');
+let lang = pickLang(safeStorage.get('lang'), navigator.languages || [navigator.language]);
+
+const render = () => {
+  applyLang(document, STRINGS, lang);
+  // the toggle speaks the *other* language ("Auf Deutsch umschalten" / "Switch to English")
+  if (toggle) {
+    toggle.setAttribute('aria-pressed', String(lang === 'de'));
+    toggle.lang = lang === 'de' ? 'en' : 'de';
+  }
+  document.querySelectorAll('[data-cv]').forEach((a) => {
+    a.href = `assets/cv/leo-neufeld-cv-${lang}.pdf`;
+    a.hreflang = lang;
+  });
+};
+
+if (toggle) {
+  toggle.hidden = false;
+  toggle.addEventListener('click', () => {
+    lang = lang === 'de' ? 'en' : 'de';
+    safeStorage.set('lang', lang);
+    render();
+  });
+}
+render();
+
+// fade-in on scroll; no-JS, no-IO and reduced-motion users get static, fully visible content
+const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const items = document.querySelectorAll('.reveal');
+if (!reduce && 'IntersectionObserver' in window && items.length) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('is-in');
+      io.unobserve(e.target);
+    });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  document.documentElement.classList.add('motion');
+  items.forEach((el) => io.observe(el));
+}
