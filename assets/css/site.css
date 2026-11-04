@@ -231,6 +231,8 @@ a:hover { text-decoration-thickness: 2px; }
 .case-pull { font: 400 var(--step-3)/1.1 var(--serif); letter-spacing: -0.01em; max-width: 20ch; }
 .case-body .stat__value { font-size: clamp(2rem, 1.5rem + 1.6vw, 2.75rem); white-space: nowrap; }
 .case-big { font: 400 var(--step-3)/1 var(--serif); color: var(--cobalt); letter-spacing: -0.02em; }
+/* Georgia has old-style figures only (ignores lnum); Iowan/Charter honour it. shortcut: Windows still falls back to Georgia, self-host a face if that matters */
+.stat__value, .card__number, .case-big { font-family: "Iowan Old Style", Charter, var(--serif); font-variant-numeric: lining-nums tabular-nums; }
 
 /* text + figure side by side; stacks on phones */
 .case-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 24rem); gap: 2rem var(--gutter); align-items: start; }
@@ -259,6 +261,10 @@ a:hover { text-decoration-thickness: 2px; }
 .case-next a { font: 400 var(--step-2)/1.2 var(--serif); text-decoration: none; }
 .case-next a:hover [data-i18n] { text-decoration: underline; }
 
+/* chart sits under the −90% stat it explains (2nd of 4 columns, same inner padding) instead of hugging the left edge */
+@media (min-width: 761px) {
+  .case-block--wide .case-body > .fig--chart { margin-left: calc(25% + clamp(1rem, 2vw, 1.75rem)); max-width: 28rem; }
+}
 @media (max-width: 760px) {
   .case-hero, .case-block, .case-split { grid-template-columns: 1fr; }
   .fig { max-width: 26rem; }

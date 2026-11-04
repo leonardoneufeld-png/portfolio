@@ -39,6 +39,7 @@ if (!reduce && 'IntersectionObserver' in window && items.length) {
       io.unobserve(e.target);
     });
   }, { rootMargin: '0px 0px -8% 0px' });
+  // already on screen at load: show at once, so the first paint (and LCP) never waits on a fade
+  items.forEach((el) => (el.getBoundingClientRect().top < innerHeight ? el.classList.add('is-in') : io.observe(el)));
   document.documentElement.classList.add('motion');
-  items.forEach((el) => io.observe(el));
 }
