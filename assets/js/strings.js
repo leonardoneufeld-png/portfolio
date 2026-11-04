@@ -295,8 +295,8 @@ export const STRINGS = {
   },
   'lebread.code.title': { en: "Code", de: "Code" },
   'lebread.code.body': {
-    en: "The repository is private because it holds real staff data. I'm happy to show parts of it in an interview.",
-    de: "Das Repository ist privat, weil es echte Personaldaten enthält. Teile davon zeige ich gerne im Gespräch.",
+    en: "The code belongs to a client project and stays private. I'm happy to walk through it in an interview.",
+    de: "Der Code gehört zu einem Kundenprojekt und bleibt privat. Im Gespräch zeige ich ihn gerne.",
   },
   'lebread.next': { en: "Next case study: Garage data lake", de: "Nächste Fallstudie: Data Lake mit Garage" },
 
@@ -352,8 +352,8 @@ export const STRINGS = {
   },
   'garage.classify.title': { en: "Classification", de: "Klassifikation" },
   'garage.classify.body': {
-    en: "The last part predicts a customer's country from the products they bought, with a decision tree and a random forest. The tree reached 91% accuracy, against a baseline of 90.8% for always guessing UK.",
-    de: "Im letzten Teil wird das Land einer Kundin oder eines Kunden aus den gekauften Produkten vorhergesagt, mit einem Entscheidungsbaum und einem Random Forest. Der Baum erreichte 91 % Genauigkeit, gegenüber einer Baseline von 90,8 %, wenn man immer «UK» rät.",
+    en: "The last part predicts a customer's country from the products they bought, with a decision tree and a random forest. The tree reached 91% accuracy. The classes are heavily imbalanced, though: always guessing UK already scores 90.8%, so accuracy says little here. My aim was to compare training speed between the decision tree and the random forest, and the baseline check is what made that clear.",
+    de: "Im letzten Teil wird das Land einer Kundin oder eines Kunden aus den gekauften Produkten vorhergesagt, mit einem Entscheidungsbaum und einem Random Forest. Der Baum erreichte 91 % Genauigkeit. Die Klassen sind aber stark unausgewogen: Wer immer «UK» rät, kommt schon auf 90,8 %. Die Genauigkeit sagt hier also wenig aus. Mir ging es darum, die Trainingszeit von Entscheidungsbaum und Random Forest zu vergleichen, und der Vergleich mit der Baseline hat das deutlich gemacht.",
   },
   'garage.classify.speed': {
     en: "Speed: the random forest with 50 trees took 16.9 s and the single tree 11.8 s, so the forest was only 1.4× slower.",

@@ -113,7 +113,7 @@
       <section class="case-block reveal" aria-labelledby="classify-title">
         <h2 id="classify-title" data-i18n="garage.classify.title">Classification</h2>
         <div class="case-body">
-          <p data-i18n="garage.classify.body">The last part predicts a customer's country from the products they bought, with a decision tree and a random forest. The tree reached 91% accuracy, against a baseline of 90.8% for always guessing UK.</p>
+          <p data-i18n="garage.classify.body">The last part predicts a customer's country from the products they bought, with a decision tree and a random forest. The tree reached 91% accuracy. The classes are heavily imbalanced, though: always guessing UK already scores 90.8%, so accuracy says little here. My aim was to compare training speed between the decision tree and the random forest, and the baseline check is what made that clear.</p>
           <p data-i18n="garage.classify.speed">Speed: the random forest with 50 trees took 16.9 s and the single tree 11.8 s, so the forest was only 1.4× slower.</p>
         </div>
       </section>
