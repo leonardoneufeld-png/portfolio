@@ -116,8 +116,8 @@ export const STRINGS = {
   'journey.kpmg.place': { en: "Stuttgart, Germany", de: "Stuttgart, Deutschland" },
   'journey.kpmg.title': { en: "KPMG Consulting · Logistics & ERP Systems Intern Consultant", de: "KPMG Consulting · Praktikant Logistik & ERP-Systeme" },
   'journey.kpmg.what': {
-    en: "Wrote SQL across several databases for supply-chain KPI dashboards. Supported an SAP S/4HANA migration.",
-    de: "SQL-Abfragen über mehrere Datenbanken für Supply-Chain-KPI-Dashboards. Unterstützung bei einer SAP-S/4HANA-Migration.",
+    en: "Wrote Power BI queries across several databases for supply-chain KPI dashboards. Supported an SAP S/4HANA migration.",
+    de: "Power-BI-Abfragen über mehrere Datenbanken für Supply-Chain-KPI-Dashboards. Unterstützung bei einer SAP-S/4HANA-Migration.",
   },
   'journey.bunca.when': { en: "11/2024 – 10/2025", de: "11/2024 – 10/2025" },
   'journey.bunca.place': { en: "Frankfurt, Germany", de: "Frankfurt, Deutschland" },
